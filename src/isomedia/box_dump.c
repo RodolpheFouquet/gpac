@@ -637,6 +637,10 @@ GF_Err video_sample_entry_box_dump(GF_Box *a, FILE * trace)
 		name = "YUV444_10_SampleEntryBox";
 		full_dump=GF_TRUE;
 		break;
+	case GF_QT_SUBTYPE_DNXHD:
+		name = "DNxHDSampleEntryBox";
+		full_dump=GF_TRUE;
+		break;
 	default:
 		//DO NOT TOUCH FOR NOW, this breaks all hashes
 		name = "MPEGVisualSampleDescriptionBox";

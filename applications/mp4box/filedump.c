@@ -999,6 +999,7 @@ static void dump_isom_nal_ex(GF_ISOFile *file, GF_ISOTrackID trackID, FILE *dump
 #endif
 	GF_AVCConfig *avccfg, *svccfg;
 	GF_HEVCConfig *hevccfg, *lhvccfg;
+
 	GF_VVCConfig *vvccfg;
 	GF_NALUFFParam *slc;
 	GF_DNxHDConfig *dnxhdcfg;
@@ -1091,7 +1092,11 @@ static void dump_isom_nal_ex(GF_ISOFile *file, GF_ISOTrackID trackID, FILE *dump
 
 		fprintf(dump, " <NALUConfig>\n");
 
-		if (!avccfg && !svccfg && !hevccfg && !lhvccfg && !vvccfg) {
+		if(dnxhdcfg) {
+			printf("Track %d is VC3, extracting as VC3\n", trackID);
+			return;
+		}
+		if (!avccfg && !svccfg && !hevccfg && !lhvccfg) {
 			fprintf(stderr, "Error: Track #%d is not NALU-based!\n", trackID);
 			return;
 		}

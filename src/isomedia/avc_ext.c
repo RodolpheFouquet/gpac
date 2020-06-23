@@ -2606,7 +2606,7 @@ GF_HEVCConfig *gf_isom_lhvc_config_get(GF_ISOFile *the_file, u32 trackNumber, u3
 GF_EXPORT
 GF_DNxHDConfig *gf_isom_dnxhd_config_get(GF_ISOFile *the_file, u32 trackNumber, u32 DescriptionIndex) {
 
-	GF_DNxHDConfig *dnxhdc;
+	GF_DNxHDConfig *dnxhdc = gf_malloc(sizeof(GF_DNxHDConfig));
 
 	GF_TrackBox *trak;
 	GF_MPEGVisualSampleEntryBox *entry;
@@ -2623,6 +2623,8 @@ GF_DNxHDConfig *gf_isom_dnxhd_config_get(GF_ISOFile *the_file, u32 trackNumber, 
 	} else {
 		return NULL;
 	} 
+
+	return dnxhdc;
 }
 
 void btrt_box_del(GF_Box *s)

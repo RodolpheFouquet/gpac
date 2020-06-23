@@ -6350,6 +6350,9 @@ static void gf_isom_check_sample_desc(GF_TrackBox *trak)
 
 	i=0;
 	while ((a = (GF_UnknownBox*)gf_list_enum(trak->Media->information->sampleTable->SampleDescription->child_boxes, &i))) {
+		if(a->type == GF_QT_SUBTYPE_DNXHD) {
+			printf("Dnxhd detected");
+		}
 		switch (a->type) {
 		case GF_ISOM_BOX_TYPE_MP4S:
 		case GF_ISOM_BOX_TYPE_ENCS:
@@ -6437,6 +6440,7 @@ static void gf_isom_check_sample_desc(GF_TrackBox *trak)
 		case GF_QT_SUBTYPE_YUV444:
 		case GF_QT_SUBTYPE_YUV422_10:
 		case GF_QT_SUBTYPE_YUV444_10:
+		case GF_QT_SUBTYPE_DNXHD:
 		case GF_ISOM_BOX_TYPE_IPCM:
 		case GF_ISOM_BOX_TYPE_FPCM:
 		case GF_ISOM_BOX_TYPE_VVC1:

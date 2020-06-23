@@ -334,6 +334,7 @@ enum
 	GF_QT_SUBTYPE_YUV444 	= GF_4CC('v','3','0','8'),
 	GF_QT_SUBTYPE_YUV422_10 	= GF_4CC('v','2','1','0'),
 	GF_QT_SUBTYPE_YUV444_10 	= GF_4CC('v','4','1','0'),
+	GF_QT_SUBTYPE_DNXHD 	= GF_4CC('A','V','d','n'),
 };
 
 
