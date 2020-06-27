@@ -846,6 +846,7 @@
 #pragma comment (linker, EXPORT_SYMBOL(gf_isom_3gp_config_get) )
 #pragma comment (linker, EXPORT_SYMBOL(gf_isom_hevc_config_get) )
 #pragma comment (linker, EXPORT_SYMBOL(gf_isom_lhvc_config_get) )
+#pragma comment (linker, EXPORT_SYMBOL(gf_isom_dnxhd_config_get) )
 #pragma comment (linker, EXPORT_SYMBOL(gf_isom_get_hevc_lhvc_type) )
 #pragma comment (linker, EXPORT_SYMBOL(gf_isom_vvc_config_get) )
 #pragma comment (linker, EXPORT_SYMBOL(gf_isom_get_vvc_type) )

@@ -3074,6 +3074,13 @@ GF_ISOMVVCType gf_isom_get_vvc_type(GF_ISOFile *isom_file, u32 trackNumber, u32 
 \return the VVC config - user is responsible for deleting it
 */
 GF_VVCConfig *gf_isom_vvc_config_get(GF_ISOFile *isom_file, u32 trackNumber, u32 sampleDescriptionIndex);
+/*! gets DNxHD config for a sample description
+\param isom_file the target ISO file
+\param trackNumber the target track
+\param sampleDescriptionIndex the target sample description index
+\return the DNxHD config - user is responsible for deleting it
+*/
+GF_DNxHDConfig* gf_isom_dnxhd_config_get(GF_ISOFile* the_file, u32 trackNumber, u32 DescriptionIndex);
 
 /*! gets AV1 config for a sample description
 \param isom_file the target ISO file
