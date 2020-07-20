@@ -3684,5 +3684,46 @@ u32 gf_isom_linf_size_entry(void *entry)
 	return size;
 }
 
+GF_Box *AVdn_box_new() {
+	GF_DNxHDConfigurationBox *tmp = (GF_DNxHDConfigurationBox *)gf_malloc(sizeof(GF_DNxHDConfigurationBox));
+	if (tmp == NULL) return NULL;
+	memset(tmp, 0, sizeof(GF_DNxHDConfigurationBox));
+	tmp->type = GF_QT_SUBTYPE_DNXHD;
+	return (GF_Box *)tmp;
+}
+
+void AVdn_box_del(GF_Box *s) {
+}
+
+GF_Err AVdn_box_read(GF_Box *s, GF_BitStream *bs)
+{
+	u64 pos, read;
+	GF_DNxHDConfigurationBox *ptr = (GF_DNxHDConfigurationBox*)s;
+
+	if (ptr->config) gf_odf_dnxhd_cfg_del(ptr->config);
+
+	ptr->config = gf_odf_dnxhd_cfg_new();
+
+	return GF_OK;
+}
+
+GF_Err AVdn_box_write(GF_Box *s, GF_BitStream *bs) {
+	GF_Err e;
+	GF_DNxHDConfigurationBox *ptr = (GF_DNxHDConfigurationBox*)s;
+	if (!s) return GF_BAD_PARAM;
+	if (!ptr->config) return GF_BAD_PARAM;
+	e = gf_isom_box_write_header(s, bs);
+	if (e) return e;
+
+	return gf_odf_dnxhd_cfg_write_bs(ptr->config, bs);
+}
+
+GF_Err AVdn_box_size(GF_Box *s) {
+
+
+	return GF_OK;
+}
+
+
 
 #endif /*GPAC_DISABLE_ISOM*/

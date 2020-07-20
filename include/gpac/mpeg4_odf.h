@@ -958,6 +958,7 @@ typedef struct
 } GF_AVCConfig;
 
 
+/*! DNxHD (SMPTE VC-3) config AVdn */
 typedef struct
 {
 	/* data */
@@ -1124,6 +1125,7 @@ typedef struct
 	int RefFrameWidth[VP9_NUM_REF_FRAMES];
 	int RefFrameHeight[VP9_NUM_REF_FRAMES];
 } GF_VPConfig;
+
 
 /*! DolbyVision config dvcC */
 typedef struct {

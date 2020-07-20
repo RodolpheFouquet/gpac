@@ -1395,6 +1395,14 @@ typedef struct
 	GF_VPConfig *config;
 } GF_VPConfigurationBox;
 
+
+typedef struct
+{
+	GF_ISOM_BOX
+	GF_DNxHDConfig *config;
+} GF_DNxHDConfigurationBox;
+
+
 typedef struct
 {
 	GF_ISOM_FULL_BOX

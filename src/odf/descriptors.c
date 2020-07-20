@@ -1526,6 +1526,53 @@ GF_VPConfig *gf_odf_vp_cfg_read(u8 *dsi, u32 dsi_size)
 	return cfg;
 }
 
+
+GF_EXPORT
+GF_AV1Config *gf_odf_dnxhd_cfg_new()
+{
+	GF_AV1Config *cfg;
+	return cfg;
+}
+
+GF_EXPORT
+void gf_odf_dnxhd_cfg_del(GF_AV1Config *cfg)
+{
+	if (!cfg) return;
+	gf_free(cfg);
+}
+
+GF_EXPORT
+GF_Err gf_odf_dnxhd_cfg_write_bs(GF_AV1Config *cfg, GF_BitStream *bs)
+{
+
+	return GF_OK;
+}
+
+GF_EXPORT
+GF_Err gf_odf_dnxhd_cfg_write(GF_AV1Config *cfg, u8 **outData, u32 *outSize) {
+	GF_Err e;
+	return e;
+}
+
+
+GF_EXPORT
+GF_DNxHDConfig *gf_odf_dnxhd_cfg_read_bs(GF_BitStream *bs, Bool is_v0)
+{
+	GF_DNxHDConfig *cfg = gf_odf_vp_cfg_new();
+
+
+	return cfg;
+}
+
+GF_EXPORT
+GF_DNxHDConfig *gf_odf_dnxhd_cfg_read(u8 *dsi, u32 dsi_size)
+{
+	GF_BitStream *bs = gf_bs_new(dsi, dsi_size, GF_BITSTREAM_READ);
+	GF_DNxHDConfig *cfg = gf_odf_vp_cfg_read_bs(bs, GF_FALSE);
+	gf_bs_del(bs);
+	return cfg;
+}
+
 GF_EXPORT
 GF_AV1Config *gf_odf_av1_cfg_read_bs_size(GF_BitStream *bs, u32 size)
 {
