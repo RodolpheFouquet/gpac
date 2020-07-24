@@ -2623,8 +2623,6 @@ GF_DNxHDConfig *gf_isom_dnxhd_config_get(GF_ISOFile *the_file, u32 trackNumber, 
 	} else {
 		return NULL;
 	} 
-
-	return dnxhdc;
 }
 
 void btrt_box_del(GF_Box *s)
