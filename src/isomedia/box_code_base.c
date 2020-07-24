@@ -6350,7 +6350,7 @@ static void gf_isom_check_sample_desc(GF_TrackBox *trak)
 
 	i=0;
 	while ((a = (GF_UnknownBox*)gf_list_enum(trak->Media->information->sampleTable->SampleDescription->child_boxes, &i))) {
-		if(a->type == GF_QT_SUBTYPE_DNXHD) {
+		if(a->type == GF_QT_BOX_TYPE_DNXHD) {
 			printf("Dnxhd detected");
 		}
 		switch (a->type) {

@@ -489,6 +489,11 @@ enum
 	GF_QT_BOX_TYPE_FIEL = GF_4CC('f','i','e','l'),
 	GF_QT_BOX_TYPE_GAMA = GF_4CC('g','a','m','a'),
 	GF_QT_BOX_TYPE_CHRM = GF_4CC('c','h','r','m'),
+	/**/
+	GF_QT_BOX_TYPE_DNXHD = GF_4CC('A','V','d','n'),
+	GF_QT_BOX_TYPE_ACLR = GF_4CC('A','C','L','R'),
+	GF_QT_BOX_TYPE_APRG= GF_4CC('A','P','R','G'),
+	GF_QT_BOX_TYPE_ARES= GF_4CC('A','R','E','S'),
 
 	/* from drm_sample.c */
 	GF_ISOM_BOX_TYPE_264B 	= GF_4CC('2','6','4','b'),
