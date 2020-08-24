@@ -1422,11 +1422,11 @@ typedef struct {
 } GF_DOVIConfigurationBox;
 
 
-typedef struct {
+typedef struct
+{
 	GF_ISOM_BOX
-	GF_DNxHDConfigurationBox GF_DNxHDConfigurationBox;
+	GF_DNxHDConfig *config;
 } GF_DNxHDConfigurationBox;
-
 /*typed
 /*typedef struct { //extends Box('hvcE')
 	GF_ISOM_BOX

@@ -957,7 +957,29 @@ typedef struct
 	Bool write_annex_b;
 } GF_AVCConfig;
 
-
+typedef struct
+{
+	/* data */
+    s32  HS;
+    s32  CID;
+    s16  ALPF;
+    s16  SPL;
+    s16  PARC;
+    s16  PARN;
+    s8   SBD;
+    s8   FFC_FirstFrame;
+    s8   HVN;
+    s8   CLV;
+    Bool    CLF;
+    s8   SSC;
+    Bool    CRCF;
+    Bool    SST;
+    Bool    VBR;
+    Bool    PMA;
+    Bool    LLA;
+    Bool    ALP;
+    Bool    FFE;
+} GF_DNxHDConfig;
 
 /*! used for storing HEVC SPS/PPS/VPS/SEI*/
 typedef struct
