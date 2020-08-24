@@ -2603,6 +2603,27 @@ GF_HEVCConfig *gf_isom_lhvc_config_get(GF_ISOFile *the_file, u32 trackNumber, u3
 	return lhvc;
 }
 
+GF_EXPORT
+GF_DNxHDConfig *gf_isom_dnxhd_config_get(GF_ISOFile *the_file, u32 trackNumber, u32 DescriptionIndex) {
+
+	GF_DNxHDConfig *dnxhdc;
+
+	GF_TrackBox *trak;
+	GF_MPEGVisualSampleEntryBox *entry;
+	trak = gf_isom_get_track_from_file(the_file, trackNumber);
+
+	if (!trak || !trak->Media || !DescriptionIndex) return NULL;
+
+	if (!gf_isom_is_video_handler_type(trak->Media->handler->handlerType))
+		return NULL;
+	entry = (GF_MPEGVisualSampleEntryBox*)gf_list_get(trak->Media->information->sampleTable->SampleDescription->child_boxes, DescriptionIndex-1);
+	if (!entry) return NULL;
+	if (entry->dnxhd_config->config) {
+		return dnxhdc;
+	} else {
+		return NULL;
+	} 
+}
 
 void btrt_box_del(GF_Box *s)
 {

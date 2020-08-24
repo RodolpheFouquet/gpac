@@ -1477,6 +1477,8 @@ typedef struct
 	GF_J2KHeaderBox *jp2h;
 	/*dolbyvision extension*/
 	GF_DOVIConfigurationBox *dovi_config;
+	/*DNcHD extension*/
+	GF_DNxHDConfigurationBox *dnxhd_config;
 
 	/*internally emulated esd*/
 	GF_ESD *emul_esd;
