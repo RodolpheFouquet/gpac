@@ -1001,6 +1001,7 @@ static void dump_isom_nal_ex(GF_ISOFile *file, GF_ISOTrackID trackID, FILE *dump
 	GF_HEVCConfig *hevccfg, *lhvccfg;
 	GF_VVCConfig *vvccfg;
 	GF_NALUFFParam *slc;
+	GF_DNxHDConfig *dnxhdcfg;
 	Bool has_svcc = GF_FALSE;
 
 	track = gf_isom_get_track_by_id(file, trackID);
@@ -1060,6 +1061,7 @@ static void dump_isom_nal_ex(GF_ISOFile *file, GF_ISOTrackID trackID, FILE *dump
 		hevccfg = gf_isom_hevc_config_get(file, track, j+1);
 		lhvccfg = gf_isom_lhvc_config_get(file, track, j+1);
 		vvccfg = gf_isom_vvc_config_get(file, track, j+1);
+		dnxhdcfg = gf_isom_dnxhd_config_get(file, track, j+1);
 
 		is_svc = (svccfg!=NULL) ? 1:0;
 
